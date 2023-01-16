@@ -5,3 +5,14 @@
 body {
     font-family: 'Inconsolata', monospace;
   }
+
+  @layer components {
+    .sidebar-icon {
+      @apply relative flex items-center justify-center h-12 w-12 my-6 mx-auto
+       hover:bg-stone-400 rounded-2xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
+    }
+    .sidebar-tooltip {
+      @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md text-xs 
+      transition-all duration-100 scale-0 origin-left text-slate-900
+    }
+  }
