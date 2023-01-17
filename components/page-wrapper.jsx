@@ -1,10 +1,10 @@
 "use client";
-import classNames from "classnames";
+
 import { AnimatePresence, motion,  } from "framer-motion";
 import { useRouter } from 'next/navigation';
 export const PageWrapper = ({
   children,
-  className,
+
 
 }) =>{
     const router = useRouter();
@@ -35,6 +35,7 @@ export const PageWrapper = ({
         duration:0.75,
       }}
       variants={pageWrapperVariants}
+      
     >
     {children}
   </motion.div>

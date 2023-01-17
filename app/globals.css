@@ -4,15 +4,43 @@
 
 body {
     font-family: 'Inconsolata', monospace;
+    
   }
 
   @layer components {
     .sidebar-icon {
-      @apply relative flex items-center justify-center h-12 w-12 my-6 mx-auto
+      @apply relative flex items-center justify-center h-12 w-12 my-6 mx-auto bg-stone-200
        hover:bg-stone-400 rounded-2xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
     }
     .sidebar-tooltip {
       @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md text-xs 
       transition-all duration-100 scale-0 origin-left text-slate-900
+    }
+    .social-icon{
+      @apply tab tab-bordered rounded-2xl bg-stone-200 hover:bg-stone-400 hover:rounded-xl hover:scale-125 transition ease-in-out hover:translate-y-1 hover:shadow-lg
+    }
+    .item {
+      @apply min-w-[-30] h-full px-10
+    }
+  }
+  @layer utilities {
+    .scrollbar::-webkit-scrollbar {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .scrollbar::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background: #f7f4ed;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #e0cbcb;
+      border-radius: 100vh;
+      border: 3px solid #f6f7ed;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #c0a0b9;
     }
   }
