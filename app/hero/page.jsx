@@ -1,7 +1,6 @@
 "use client";
 import { PageWrapper } from "@/components/page-wrapper";
-import { motion,useAnimation, useDragControls } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion,} from "framer-motion";
 import {
   FaRegIdBadge,
   FaRegPaperPlane,
@@ -11,56 +10,50 @@ import {
   FaFilePdf,
 } from "react-icons/fa";
 import { BsArrowDownSquare } from "react-icons/bs";
-import { ProjectDisplay } from "@/components/project-display";
+
+import Carousel from "@/components/carousel";
+
 export default function Home() {
+  const descripArray = [ 
+    {projectName: "Zeno",projectParagraph: "Test paragraph 1 at index 0"},
+    {projectName: "Persona Generation App",projectParagraph: "Test paragraph 2 at index 1"},
+    {projectName: "React Tic Tac Toe",projectParagraph: "Test paragraph 2 at index 2"},
+    {projectName: "ASP.NET App",projectParagraph: "Test paragraph 2 at index 3"},
+  ] 
 
-  const [width, setWidth] = useState(0);
-  const carousel = useRef();
-  const controls = useAnimation();
-  const dragControls = useDragControls()
-function onPanEnd (e,info){
-  if(info.delta.x >1 || info.velocity.x >100){
-    
-    console.log("Next platform left ");
-  } else if (info.delta.x<-1 || info.velocity.x<-100){
-    
-    console.log("Next platform right");   
-  }
-  
-  
-}
-
-
-  useEffect(()=>{
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  },[])
   return (
     <PageWrapper>
       <main className="min-h-screen flex bg-base-300 ">
         <div className=" min-w-max h-screen fixed top-0 left-0  flex flex-col items-start justify-center pl-6">
           <div className="sidebar-icon tab tab-bordered group">
+            <a href="/">
             <FaRegPaperPlane size="24" />
+            </a>
             <span className="sidebar-tooltip group-hover:scale-100">
-              Introduction
+              Lets watch that animation again!
             </span>
           </div>
 
           <div className="sidebar-icon tab tab-bordered group">
-            <FaRegIdBadge size="24" />
+            <a href="#p1">
+              <FaRegIdBadge size="24" />
+            </a>
             <span className="sidebar-tooltip group-hover:scale-100">
               About me
             </span>
           </div>
 
           <div className="sidebar-icon tab tab-bordered group">
+            <a href="#p2">
             <FaRegKeyboard size="26" />
+            </a>
             <span className="sidebar-tooltip group-hover:scale-100">
               My projects
             </span>
           </div>
         </div>
 
-        <div className="snap-y snap-mandatory h-screen w-screen overflow-y-scroll overflow-x-hidden scrollbar">
+        <div  className="snap-y snap-mandatory h-screen w-screen overflow-y-scroll overflow-x-hidden scrollbar">
           <div className="hero min-h-screen bg-base-200 snap-start">
             <div className="hero-content ">
               <div className="max-w-md flex justify-center ">
@@ -94,7 +87,7 @@ function onPanEnd (e,info){
                       </a>
                     </div>
                   </div>
-                  <h2 className="mb-6 text-lg">Recently I&apos;ve been...</h2>
+                  <h2 id = "p1" className="mb-6 text-lg">Recently I&apos;ve been...</h2>
                   <ul className="list-disc ">
                     <li>
                       Solo-developing a journalling&nbsp;
@@ -146,46 +139,23 @@ function onPanEnd (e,info){
               </div>
             </div>
           </div>
-
-          
             <div className="snap-start bg-base-200 w-screen h-screen flex-col items items-center">
               <div className="flex justify-center items-center">
-              <h2 className="mb-6 text-lg mt-20">
-                Here are some of my recent projects
+                
+                <h2 className="mb-6 text-lg mt-20">
+                Here are some of my recent projects (swipe with your mouse) 
               </h2>
               </div>
               <div className="hero">
-                <div className="hero-content max-w-md">
-              <motion.div  ref = {carousel} className= "cursor-grab overflow-hidden bg-base-200 py-2 px-2">
-                {/* //drag = "x" optionally add this if the animation look cooler with drag..? */}
-                <motion.div 
-                drag = "x" 
-                dragConstraints ={ {right:0, left:-width}} 
-               dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
-               dragElastic={1}
-               onPanEnd= {onPanEnd}
                
-                className="flex bg-base-200 touch-none select-none">
-                  <motion.div className=" item" key={0}>
-                  <ProjectDisplay projectName="Zeno" projectParagraph="Test paragraph Z"/>
-                  </motion.div>
-                  <motion.div className="item" key={1}>
-                  <ProjectDisplay projectName="Persona Generation app" projectParagraph="rtest"/>
-                  </motion.div>
-                  <motion.div className="item" key={2}>
-                  <ProjectDisplay projectName="Zeno" projectParagraph="Test paragraph"/>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
+                <Carousel descripArray={descripArray}/>
+                <div id = "p2" className="hero-content">
               </div>
               </div>
-              
-
             </div>
-          
         </div>
       </main>
       </PageWrapper>
-    
   );
 }
+

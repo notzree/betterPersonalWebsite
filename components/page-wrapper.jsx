@@ -7,7 +7,7 @@ export const PageWrapper = ({children,}) =>{
     const pageWrapperVariants =
     {
       initial: {
-        clipPath: 'polygon(0 0, 100% 0, 100% 0, 0% 0)', 
+        clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)', 
         transition: { duration: .75 }
       },
       animate: {
@@ -15,7 +15,7 @@ export const PageWrapper = ({children,}) =>{
         transition: { duration: .75, staggerChildren: .1 }
       },
       exit: {
-        clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 100% 100%)',
+        clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
         transition: { duration: .75 }
       }
     };

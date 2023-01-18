@@ -6,6 +6,11 @@ body {
     font-family: 'Inconsolata', monospace;
     
   }
+  html {
+    --scroll-behavior: smooth!important;
+    scroll-behavior: smooth!important;
+    }
+
 
   @layer components {
     .sidebar-icon {
