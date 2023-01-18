@@ -1,6 +1,6 @@
 "use client";
 import { PageWrapper } from "@/components/page-wrapper";
-import { motion,useAnimation } from "framer-motion";
+import { motion,useAnimation, useDragControls } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import {
   FaRegIdBadge,
@@ -17,7 +17,16 @@ export default function Home() {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
   const controls = useAnimation();
-function onPan (event,info){
+  const dragControls = useDragControls()
+function onPanEnd (e,info){
+  if(info.delta.x >1 || info.velocity.x >100){
+    
+    console.log("Next platform left ");
+  } else if (info.delta.x<-1 || info.velocity.x<-100){
+    
+    console.log("Next platform right");   
+  }
+  
   
 }
 
@@ -148,11 +157,15 @@ function onPan (event,info){
               <div className="hero">
                 <div className="hero-content max-w-md">
               <motion.div  ref = {carousel} className= "cursor-grab overflow-hidden bg-base-200 py-2 px-2">
-                <motion.div drag = "x" dragConstraints ={ {right:0, left:-width}} 
+                {/* //drag = "x" optionally add this if the animation look cooler with drag..? */}
+                <motion.div 
+                drag = "x" 
+                dragConstraints ={ {right:0, left:-width}} 
                dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
                dragElastic={1}
-               onPan= {onPan}
-                className="flex bg-base-200 touch-none">
+               onPanEnd= {onPanEnd}
+               
+                className="flex bg-base-200 touch-none select-none">
                   <motion.div className=" item" key={0}>
                   <ProjectDisplay projectName="Zeno" projectParagraph="Test paragraph Z"/>
                   </motion.div>
@@ -172,6 +185,7 @@ function onPan (event,info){
           
         </div>
       </main>
-    </PageWrapper>
+      </PageWrapper>
+    
   );
 }

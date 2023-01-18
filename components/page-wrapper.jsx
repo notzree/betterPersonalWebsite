@@ -2,40 +2,34 @@
 
 import { AnimatePresence, motion,  } from "framer-motion";
 import { useRouter } from 'next/navigation';
-export const PageWrapper = ({
-  children,
-
-
-}) =>{
+export const PageWrapper = ({children,}) =>{
     const router = useRouter();
     const pageWrapperVariants =
     {
-      initialState: {
-        opacity: 0,
-       
+      initial: {
+        clipPath: 'polygon(0 0, 100% 0, 100% 0, 0% 0)', 
+        transition: { duration: .75 }
       },
-      animateState: {
-        opacity: 1,
-        
+      animate: {
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+        transition: { duration: .75, staggerChildren: .1 }
       },
-      exitState: {
-        
-      },
+      exit: {
+        clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 100% 100%)',
+        transition: { duration: .75 }
+      }
     };
     
    return (
     <AnimatePresence mode="wait">
     <motion.div
-      
       key={router.route}
-      initial="initialState"
-      animate="animateState"
-      exit="exitState"
-      transition={{
-        duration:0.75,
-      }}
-      variants={pageWrapperVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       
+      variants={pageWrapperVariants}
+      className = "w-screen"
     >
     {children}
   </motion.div>

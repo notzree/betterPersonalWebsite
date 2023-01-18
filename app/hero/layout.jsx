@@ -1,9 +1,12 @@
-import { FaRegIdBadge, FaRegPaperPlane, FaRegKeyboard } from "react-icons/fa";
+import { PageWrapper } from "@/components/page-wrapper";
 
 export default function DashboardLayout({ children }) {
   return (
+    
     <section className="">
+      
       {children}
+      
     </section>
   );
 }

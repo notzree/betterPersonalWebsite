@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { PageWrapper } from "@/components/page-wrapper";
 export default function Home() {
+  
   return (
       <PageWrapper >
         <main className="">
