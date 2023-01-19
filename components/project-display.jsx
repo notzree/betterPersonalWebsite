@@ -9,7 +9,7 @@ export const ProjectDisplay = ({projectName,projectParagraph, projectImage, proj
         <h2 class="card-title text-2xl">{projectName}</h2>
         <div className="flex flex-row">
         {projectSkills.map((item, i)=>(
-            <p className=" text-xs">
+            <p className=" text-xs" key = {i}>
             {projectSkills[i]}
             </p>
         ))}
