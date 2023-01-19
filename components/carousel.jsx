@@ -61,8 +61,12 @@ export default function Carousel ({descripArray}){
                       paginate(-1);
                     }
                   }}
+                  className = "cursor-grab"
                   >
-                  <ProjectDisplay projectName={descripArray[descripIndex].projectName} projectParagraph = {descripArray[descripIndex].projectParagraph}/>
+                  <ProjectDisplay projectName={descripArray[descripIndex].projectName} projectParagraph = {descripArray[descripIndex].projectParagraph}
+                  projectImage = {descripArray[descripIndex].projectImage}
+                  projectSkills = {descripArray[descripIndex].projectSkills}
+                  />
                   </motion.div>
                 </AnimatePresence>
                 
