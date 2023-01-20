@@ -1,5 +1,5 @@
 "use client";
-import { PageWrapper } from "@/components/page-wrapper";
+import { AnalyticsWrapper } from './components/analytics';
 import "./globals.css";
 export default function RootLayout({ children }) {
 
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <body className="">
       
       {children}
-      
+      <AnalyticsWrapper />
     </body>
     
     </html>
