@@ -17,6 +17,7 @@ export const ProjectDisplay = ({
               className="kbd hover:bg-stone-400 transition-all duration-150"
               href={projectLink}
               target="_blank"
+              rel="noreferrer"
             >
               Visit
             </a>
