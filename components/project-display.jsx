@@ -23,7 +23,7 @@ export const ProjectDisplay = ({
           )}
         </div>
         <div className="flex flex-row">
-          {projectSkills.map((item, i) => (
+          {projectSkills?.map((item, i) => (
             <p className=" text-xs" key={i}>
               {projectSkills[i]}
             </p>

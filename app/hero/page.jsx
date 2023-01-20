@@ -51,6 +51,20 @@ export default function Home() {
       ],
       projectLink: "",
     },
+    {
+      projectName: "Restaurant finder app",
+      projectImage : "https://user-images.githubusercontent.com/118649285/202923794-f214e1ca-6d14-4901-947f-73222ae29d61.png",
+      projectParagraph: "Fetched restaurant and location data using Axios.js from google-maps API. Utilized react and Material-UI to develop a mobile-responsive web app.",
+      projectSkills: ["React", "Google-maps API", "Material-UI", "Tailwind"],
+      projectLink: "https://github.com/notzree/uwfoodmap"
+    },
+    {
+      projectName: "Market research Paper",
+      projectImage: "https://user-images.githubusercontent.com/118649285/209455298-5aa587a9-b0fe-4118-b8c3-53d35425f799.png",
+      projectLink: "/rzBusinessIA.pdf",
+      projectParagraph: "Researched and Analyzed Richmond Hill Muay Thai's online marketing strategies to optimize marketing spending in lieu of a new location opening. Leveraged business frameworks like force-field analysis and surveyed 50+ members to collect data.",
+      projectSkills: ["Research", "Business management", "Stakeholder analysis"]
+    }
   ];
 
   const banner = {

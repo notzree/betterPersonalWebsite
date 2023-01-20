@@ -68,7 +68,8 @@ export default function Carousel({ descripArray }) {
             projectParagraph={descripArray[descripIndex].projectParagraph}
             projectImage={descripArray[descripIndex].projectImage}
             projectSkills={descripArray[descripIndex].projectSkills}
-            projectLink={descripArray[descripIndex].projectLink}
+            projectLink={descripArray[descripIndex].projectLink
+            }
           />
         </motion.div>
       </AnimatePresence>
