@@ -52,6 +52,19 @@ export default function Home() {
       projectLink: "",
     },
     {
+      projectName: "write:here (Hackville 2023 Winner)",
+      projectImage:
+        "https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/380/383/datas/medium.png",
+      projectParagraph:
+        "Write:here is designed to allow people with barriers to using technology to send emails the old fashioned way using AI-powered Optical Character Reognition (OCR) to convert hand written letters into an email. This email is then sent through Co:Here's NLP model to do grammer checking, formatting, and automatic subject line generation. It is then sent using EmailJs to their specified recepient. This was my team project for Hackville 2023, and I was mainly resonsible for setting up the backend and implementing the AI-powered OCR and helping out on integrating the Co:here NLP. I used Next.JS for the web app as well as Google Cloud services (sepcifically Vision API) and Co:here's NLP API. Links to Github and Figma located in the devpost. ",
+      projectSkills: [
+        "NextJS",
+        "Google Cloud Vision API",
+        "co:here",
+      ],
+      projectLink: "https://devpost.com/software/write-here",
+    },
+    {
       projectName: "Restaurant finder app",
       projectImage: "https://user-images.githubusercontent.com/118649285/202923794-f214e1ca-6d14-4901-947f-73222ae29d61.png",
       projectParagraph: "Fetched restaurant and location data using Axios.js from google-maps API. Utilized react and Material-UI to develop a mobile-responsive web app.",
@@ -92,7 +105,7 @@ export default function Home() {
   return (
     <PageWrapper>
       <main className="min-h-screen flex bg-base-300 ">
-        <div className=" hidden sm:block">
+        <div className=" hidden sm:block ">
           <NavBar />
         </div>
         <div className="snap-y snap-mandatory h-screen w-screen overflow-y-scroll overflow-x-hidden scrollbar ">
@@ -122,7 +135,7 @@ export default function Home() {
             >
               <div className="max-w-md flex justify-center ">
                 <motion.div initial="enter" animate="center" exit="exit">
-                  <div className="max-w-md flex justify-evenly pb-10">
+                  <div className="max-w-md flex justify-evenly py-10">
                     <div class="tooltip" data-tip="Github">
                       <a
                         href="https://github.com/notzree"
