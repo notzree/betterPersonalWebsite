@@ -10,7 +10,7 @@ import {
   FaFilePdf,
 } from "react-icons/fa";
 import { BsArrowDownSquare } from "react-icons/bs";
-
+import NavBar from "@/components/navigation";
 import Carousel from "@/components/carousel";
 
 export default function Home() {
@@ -53,7 +53,7 @@ export default function Home() {
     },
     {
       projectName: "Restaurant finder app",
-      projectImage : "https://user-images.githubusercontent.com/118649285/202923794-f214e1ca-6d14-4901-947f-73222ae29d61.png",
+      projectImage: "https://user-images.githubusercontent.com/118649285/202923794-f214e1ca-6d14-4901-947f-73222ae29d61.png",
       projectParagraph: "Fetched restaurant and location data using Axios.js from google-maps API. Utilized react and Material-UI to develop a mobile-responsive web app.",
       projectSkills: ["React", "Google-maps API", "Material-UI", "Tailwind"],
       projectLink: "https://github.com/notzree/uwfoodmap"
@@ -67,14 +67,6 @@ export default function Home() {
     }
   ];
 
-  const banner = {
-    animate: {
-      transition: {
-        delayChildren: 0.4,
-        staggerChildren: 0.1,
-      },
-    },
-  };
 
   const letterAni = {
     initial: { y: 400 },
@@ -100,61 +92,16 @@ export default function Home() {
   return (
     <PageWrapper>
       <main className="min-h-screen flex bg-base-300 ">
-        <motion.div
-          variants={banner}
-          initial="initial"
-          animate="animate"
-          className=" min-w-max h-screen fixed top-0 left-0  flex flex-col items-start justify-center pl-6"
-        >
-          <a href="/">
-            <motion.div
-              variants={letterAni}
-              initial="initial"
-              animate="animate"
-              className="sidebar-icon tab tab-bordered group"
-            >
-              <FaRegPaperPlane size="24" />
-
-              <span className="sidebar-tooltip group-hover:scale-100">
-                Lets watch that animation again!
-              </span>
-            </motion.div>
-          </a>
-          <a href="#p1">
-            <motion.div
-              variants={letterAni}
-              initial="initial"
-              animate="animate"
-              className="sidebar-icon tab tab-bordered group"
-            >
-              <FaRegIdBadge size="24" />
-              <span className="sidebar-tooltip group-hover:scale-100">
-                About me
-              </span>
-            </motion.div>
-          </a>
-          <a href="#p2">
-            <motion.div
-              variants={letterAni}
-              initial="initial"
-              animate="animate"
-              className="sidebar-icon tab tab-bordered group"
-            >
-              <FaRegKeyboard size="26" />
-              <span className="sidebar-tooltip group-hover:scale-100">
-                My projects
-              </span>
-            </motion.div>
-          </a>
-        </motion.div>
-
+        <div className=" hidden sm:block">
+          <NavBar />
+        </div>
         <div className="snap-y snap-mandatory h-screen w-screen overflow-y-scroll overflow-x-hidden scrollbar ">
           <div className="hero min-h-screen bg-base-200 snap-start ">
             <motion.div
               variants={letterAniLeft}
               initial="initial"
               animate="animate"
-              className="-mb-24 min-w-full flex flex-col items-center justify-center content-center "
+              className="sm:-mb-24 min-w-full flex flex-col items-center justify-center content-center "
             >
               <h1 className="text-5xl font-bold">Hi, I'm Richard</h1>
 

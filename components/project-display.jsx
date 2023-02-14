@@ -8,7 +8,7 @@ export const ProjectDisplay = ({
   projectLink,
 }) => {
   return (
-    <div className="card lg:card-side bg-base-300 w-[37rem]">
+    <div className="card lg:card-side bg-base-300 sm:w-[37rem] w-screen">
       <div className="card-body">
         <div className="flex flex-row justify-evenly">
           <h2 class="card-title text-2xl">{projectName}</h2>
@@ -23,9 +23,9 @@ export const ProjectDisplay = ({
             </a>
           )}
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-x-10 gap-y-2 w-full flex-wrap">
           {projectSkills?.map((item, i) => (
-            <p className=" text-xs" key={i}>
+            <p className=" text-xs " key={i}>
               {projectSkills[i]}
             </p>
           ))}
